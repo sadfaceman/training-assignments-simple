@@ -14,26 +14,21 @@ public class BoardPanel {
      *            The square to render.
      * @param g
      *            The graphics context to draw on.
-     * @param x
-     *            The x position to start drawing.
-     * @param y
-     *            The y position to start drawing.
-     * @param w
-     *            The width of this square (in pixels).
-     * @param h
-     *            The height of this square (in pixels).
+     * @param r
+     *            The r Rectangnle with Point and size data.
      */
-    private void render(Square square, Graphics g, int x, int y, int w, int h) {
-        square.getSprite().draw(g, x, y, w, h);
+    private void render(Square square, Graphics g, Rectangle r) {
+        Point p = r.getPosition();
+        square.getSprite().draw(g, p.x, p.y, r.getWidth(), r.getHeight());
         for (Unit unit : square.getOccupants()) {
-            unit.getSprite().draw(g, x, y, w, h);
+            unit.getSprite().draw(g, p.x, p.y, r.getWidth(), r.getHeight());
         }
     }
     // end::render[]
 
     private class Sprite {
         @SuppressWarnings("unused")
-        public void draw(Graphics g, int x, int y, int w, int h) {
+        public void draw(Graphics g, Rectangle r) {
 
         }
     }
