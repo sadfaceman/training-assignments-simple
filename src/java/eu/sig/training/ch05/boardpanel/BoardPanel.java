@@ -21,7 +21,7 @@ public class BoardPanel {
         Point p = r.getPosition();
         square.getSprite().draw(g, p.x, p.y, r.getWidth(), r.getHeight());
         for (Unit unit : square.getOccupants()) {
-            unit.getSprite().draw(g, p.x, p.y, r.getWidth(), r.getHeight());
+            unit.getSprite().draw(g, r);
         }
     }
     // end::render[]
