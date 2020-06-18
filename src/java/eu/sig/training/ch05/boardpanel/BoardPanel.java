@@ -2,6 +2,7 @@ package eu.sig.training.ch05.boardpanel;
 
 import java.awt.Graphics;
 import java.util.List;
+import java.awt.Point;
 
 public class BoardPanel {
     @SuppressWarnings("unused")
@@ -19,7 +20,7 @@ public class BoardPanel {
      */
     private void render(Square square, Graphics g, Rectangle r) {
         Point p = r.getPosition();
-        square.getSprite().draw(g, p.x, p.y, r.getWidth(), r.getHeight());
+        square.getSprite().draw(g, r);
         for (Unit unit : square.getOccupants()) {
             unit.getSprite().draw(g, r);
         }

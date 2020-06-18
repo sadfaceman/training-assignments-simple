@@ -4,10 +4,9 @@ import java.awt.Color;
 import java.util.Arrays;
 import java.util.List;
 
-
-public class ItalianFlag implements IFlag
+public class DefaultFlag implements IFlag
 {
     public List<Color> getColors() {
-        return Arrays.asList(Color.GREEN, Color.WHITE, Color.RED);
+        return Arrays.asList(Color.GRAY);
     }
 }

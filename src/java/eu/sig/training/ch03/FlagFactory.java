@@ -1,13 +1,20 @@
 package eu.sig.training.ch03;
 
+import static eu.sig.training.ch03.Nationality.BELGIAN;
+import static eu.sig.training.ch03.Nationality.DUTCH;
+import static eu.sig.training.ch03.Nationality.FRENCH;
+import static eu.sig.training.ch03.Nationality.GERMAN;
+import static eu.sig.training.ch03.Nationality.ITALIAN;
+
 import java.awt.Color;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FlagFactory {
 
-    private static final Map<Nationality, Flag> FLAGS =
-        new HashMap<Nationality, Flag>();
+    private static final Map<Nationality, IFlag> FLAGS =
+        new HashMap<Nationality, IFlag>();
 
     static {
         FLAGS.put(DUTCH, new DutchFlag());
@@ -18,7 +25,7 @@ public class FlagFactory {
     }
 
     public List<Color> getFlagColors(Nationality nationality) {
-        Flag flag = FLAGS.get(nationality);
+        IFlag flag = FLAGS.get(nationality);
         flag = flag != null ? flag : new DefaultFlag();
         return flag.getColors();
     }

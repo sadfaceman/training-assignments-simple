@@ -5,9 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class ItalianFlag implements IFlag
-{
+public class FrenchFlag implements IFlag {
     public List<Color> getColors() {
-        return Arrays.asList(Color.GREEN, Color.WHITE, Color.RED);
+        return Arrays.asList(Color.BLUE, Color.WHITE, Color.RED);
     }
 }

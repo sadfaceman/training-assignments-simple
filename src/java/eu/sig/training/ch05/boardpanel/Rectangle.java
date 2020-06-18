@@ -11,7 +11,7 @@ public class Rectangle{
         this.width = width;
         this.height = height;
     }
-    public int getWidth { return width; }
-    public int getHeight { return height; }
-    public Point getPosition { return point; }
+    public int getWidth() { return width; }
+    public int getHeight() { return height; }
+    public Point getPosition() { return point; }
 }
